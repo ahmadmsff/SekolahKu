@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="2dp"
+    android:layout_marginHorizontal="5dp">
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_siswa"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="3dp"
+            app:civ_border_overlay="true"
+            android:src="@drawable/ic_launcher_background"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/image_siswa"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp">
+            
+            <TextView
+                android:id="@+id/nama_siswa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:text="Nama Siswa"/>
+
+            <ImageView
+                android:id="@+id/icon_email"
+                android:layout_below="@id/nama_siswa"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:tint="#707070"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_email"/>
+
+            <TextView
+                android:id="@+id/email_siswa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nama_siswa"
+                android:layout_toRightOf="@id/icon_email"
+                android:textColor="#707070"
+                android:textSize="12sp"
+                android:text="yourmail@mail.com"/>
+        </RelativeLayout>
+
+    </RelativeLayout></android.support.v7.widget.CardView>
+</LinearLayout>

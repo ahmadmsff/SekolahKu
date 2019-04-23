@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/colorTextDark"
+    android:paddingBottom="3dp"
+    tools:context=".MainActivity">
+    <!-- User Details -->
+    <RelativeLayout
+        android:id="@+id/layout_user"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="5dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_siswa"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:civ_border_color="@color/colorTextLight"
+            app:civ_border_width="1dp"
+            android:src="@drawable/me"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/image_siswa"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/nama_siswa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextLight"
+                android:textSize="15sp"
+                android:text="Achmad Musyaffa Taufiqi"/>
+
+            <ImageView
+                android:id="@+id/icon_email"
+                android:layout_below="@id/nama_siswa"
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:tint="@color/colorTextDark"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_email"/>
+
+            <TextView
+                android:id="@+id/email_siswa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nama_siswa"
+                android:layout_toRightOf="@id/icon_email"
+                android:textColor="@color/colorTextDark"
+                android:textSize="9sp"
+                android:text="ahmadmsff@outlook.com"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_settings"
+            android:tint="@color/colorTextLight"/>
+    </RelativeLayout>
+
+    <!-- Search Bar -->
+    <RelativeLayout
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_below="@id/layout_user"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="20dp">
+
+        <EditText
+            android:id="@+id/text_search"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="Search"
+            android:layout_marginRight="5dp"
+            android:paddingHorizontal="10dp"
+            android:background="@color/colorTextLight"
+            android:drawableRight="@drawable/ic_search"
+            android:inputType="text"
+            android:maxLines="1"
+            android:imeOptions="actionSearch"/>
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_search">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_below="@id/layout_search"
+            android:layout_width="match_parent"
+            android:paddingTop="5dp"
+            android:layout_height="wrap_content"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/colorPrimary"
+        app:borderWidth="0dp"
+        android:tooltipText="Tambah Siswa"
+        android:src="@drawable/ic_add"
+        android:layout_margin="16dp" />
+
+    <RelativeLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:layout_height="match_parent"
+        android:background="#77808080">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</RelativeLayout>
